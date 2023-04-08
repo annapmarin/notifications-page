@@ -97,6 +97,7 @@ function Notifications() {
                 <img
                   className="container__info__image"
                   src={user.image}
+                  alt= ""
                 />
                 <div>
                   <p className="container__info__information">
@@ -106,7 +107,7 @@ function Notifications() {
                   </p>
                   <p className="container__info__time">{user.time}</p>
                 </div>
-                <img className="container__info__post-image" src={user.image2 ? user.image2 : null} />
+                <img className="container__info__post-image" src={user.image2 ? user.image2 : null} alt="" />
               </div>
               <p className={user.message ? "container__info__message" : null}>
                 {user.message}
