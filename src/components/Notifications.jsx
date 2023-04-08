@@ -103,7 +103,7 @@ function Notifications() {
                   <p className="container__info__information">
                     <strong>{user.name}</strong> {user.action}{" "}
                     <b>{user.post}</b>
-                    <a href="#">{user.page}</a> <span>{user.notRead}</span>
+                    <a href="#">{user.page}</a> <span>{notifications > 0 ? user.notRead : null}</span>
                   </p>
                   <p className="container__info__time">{user.time}</p>
                 </div>
