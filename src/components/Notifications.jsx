@@ -1,4 +1,13 @@
 import React, { useState } from "react";
+import MarkWebber from '../assets/images/avatar-mark-webber.webp';
+import AngelaGray from '../assets/images/avatar-angela-gray.webp';
+import JacobThompson from '../assets/images/avatar-jacob-thompson.webp';
+import KimberlySmith from '../assets/images/avatar-kimberly-smith.webp';
+import NathanPeterson from '../assets/images/avatar-nathan-peterson.webp';
+import RizkyHasanuddin from '../assets/images/avatar-rizky-hasanuddin.webp';
+import AnnaKim from '../assets/images/avatar-anna-kim.webp';
+import Chess from '../assets/images/image-chess.webp';
+
 
 function Notifications() {
   const [read, setRead] = useState('container__info__notification__not-read');
@@ -16,6 +25,7 @@ function Notifications() {
       time: "1m ago",
       post: "My first tournament today!",
       notRead: "🔴",
+      image: MarkWebber
     },
     {
       name: "Angela Gray",
@@ -23,6 +33,7 @@ function Notifications() {
       time: "5m ago",
       post: "",
       notRead: "🔴",
+      image: AngelaGray
     },
     {
       name: "Jacob Thompson",
@@ -30,6 +41,7 @@ function Notifications() {
       time: "1 day ago",
       page: "Chess Club",
       notRead: "🔴",
+      image: JacobThompson
     },
     {
       name: "Rizky Hasanuddin",
@@ -38,24 +50,28 @@ function Notifications() {
       post: "",
       message:
         "Hellow, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.",
+      image: RizkyHasanuddin
     },
     {
       name: "Kimberly Smith",
       action: "commented on your picture",
       time: "1 week ago",
-      image: "src/assets/images/image-chess.webp",
+      image: KimberlySmith,
+      image2: Chess
     },
     {
       name: "Nathan Peterson",
       action: "reacted to your recent post",
       time: "2 weeks ago",
       post: "5 end-game strategies to increase your win rate",
+      image: NathanPeterson
     },
     {
       name: "Anna Kim",
       action: "left the group",
       time: "2 weeks ago",
       page: "Chess Club",
+      image: AnnaKim
     },
   ];
 
@@ -80,10 +96,7 @@ function Notifications() {
               <div className="container__info__notification">
                 <img
                   className="container__info__image"
-                  src={`/src/assets/images/avatar-${user.name
-                    .toLowerCase()
-                    .split(" ")
-                    .join("-")}.webp`}
+                  src={user.image}
                 />
                 <div>
                   <p className="container__info__information">
@@ -93,7 +106,7 @@ function Notifications() {
                   </p>
                   <p className="container__info__time">{user.time}</p>
                 </div>
-                <img className="container__info__post-image" src={user.image ? user.image : null} />
+                <img className="container__info__post-image" src={user.image2 ? user.image2 : null} />
               </div>
               <p className={user.message ? "container__info__message" : null}>
                 {user.message}
